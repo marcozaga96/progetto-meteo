@@ -11,7 +11,7 @@ const Search = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${query},IT&lang=it&appid=ba34375fd9bf4551c4c3de118b34ee40`
+      `https://api.openweathermap.org/data/2.5/weather?q=${query},IT&lang=it&appid=ba34375fd9bf4551c4c3de118b34ee40&units=metric&lang=it`
     )
       .then((response) => {
         if (response.ok) {
