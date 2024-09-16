@@ -11,7 +11,7 @@ const AllMeteo = () => {
   const [sestoMeteo, setSestoMeteo] = useState("Napoli");
 
   return (
-    <div className="px-4" style={{ backgroundColor: "#221f1f" }}>
+    <div className="px-4" style={{ backgroundColor: "#1A3762" }}>
       <Container>
         <Row xs={1} md={2} lg={3} className="p-4">
           <Col>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Container, Row, Col, ListGroup, Card } from "react-bootstrap";
 
 const WeekMeteo = function ({ cityMeteo }) {
   const [detCity, setdetCity] = useState([]);
@@ -23,7 +22,7 @@ const WeekMeteo = function ({ cityMeteo }) {
       })
       .then((meteoObject) => {
         console.log("oggetto", meteoObject.list);
-        setdetCity([meteoObject]);
+        setdetCity(meteoObject.list);
         setIcon(
           "http://openweathermap.org/img/w/" +
             meteoObject[0].weather[0].icon +
@@ -34,21 +33,30 @@ const WeekMeteo = function ({ cityMeteo }) {
         console.log(err);
       });
   };
-
+  console.log("dtcity", detCity);
   return (
-    <Container>
-      <Row>
-        {detCity.map((city) => {
-          return (
-            <Col className="mt-4">
-              <ListGroup>
-                <ListGroup.Item>Giorno{city.list[0].dt_txt}</ListGroup.Item>
-              </ListGroup>
-            </Col>
-          );
-        })}
-      </Row>
-    </Container>
+    <Row>
+      {detCity.map((our, index) => (
+        <Col className="mt-4">
+          <Card
+            style={{ width: "10rem", backgroundColor: "#bcd9ff" }}
+            key={index}
+          >
+            <Card.Img
+              style={{ width: "40%" }}
+              variant="top"
+              src={`http://openweathermap.org/img/wn/${our.weather[0].icon}@2x.png`}
+            />
+            <Card.Body>
+              <Card.Title style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
+                {our.main.temp}°C
+              </Card.Title>
+              <Card.Text>Meteo orario {our.dt_txt}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
   );
 };
 export default WeekMeteo;
