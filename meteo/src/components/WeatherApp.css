@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap");
+
+body {
+  background: #0f172a;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.25) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #f8fafc;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Futuristico */
+.glow-card {
+  background: rgba(30, 41, 59, 0.45) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125) !important;
+  border-radius: 28px !important;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+/* Search Bar Pill */
+.search-pill {
+  background: rgba(30, 41, 59, 0.6) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50px !important;
+  padding: 12px 24px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-pill:focus {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3) !important;
+}
+
+.search-pill::placeholder {
+  color: rgba(226, 232, 240, 0.5) !important;
+}
+
+/* Badge Dettagli */
+.stat-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 14px 18px;
+}
+
+/* Scrollbar Orizzontale Invisibile/Custom */
+.hourly-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 8px 4px 16px 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hourly-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Gradienti Testo */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.temp-gradient {
+  background: linear-gradient(
+    180deg,
+    #ffffff 30%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-subtle {
+  color: #cbd5e1 !important; /* Grigio/Azzurro ad alto contrasto */
+}
+
+.text-accent {
+  color: #38bdf8 !important; /* Azzurro luminoso per titoli e icone */
+  font-weight: 700;
+}
